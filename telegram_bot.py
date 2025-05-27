@@ -5,6 +5,7 @@ import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
+# UPDATE 123 123123
 # Setup logging untuk production
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
