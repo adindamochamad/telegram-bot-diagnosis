@@ -1,0 +1,40 @@
+{
+  "penyakit": {
+    "flu": {
+      "nama": "Influenza",
+      "gejala": ["demam", "batuk", "pilek", "lemas", "sakit kepala", "nyeri otot"],
+      "tingkat": "ringan",
+      "saran": "Istirahat cukup, minum air putih yang banyak, konsumsi vitamin C, hindari tempat ramai"
+    },
+    "masuk_angin": {
+      "nama": "Masuk Angin",
+      "gejala": ["perut kembung", "mual", "lemas", "tidak nafsu makan", "perut begah"],
+      "tingkat": "ringan",
+      "saran": "Minum air hangat, kompres perut dengan air hangat, hindari makanan dingin dan pedas"
+    },
+    "gastritis": {
+      "nama": "Gastritis",
+      "gejala": ["perut sakit", "mual", "kembung", "perih ulu hati", "nyeri lambung"],
+      "tingkat": "sedang",
+      "saran": "Hindari makanan pedas dan asam, makan teratur dengan porsi kecil, konsultasi dokter"
+    },
+    "demam_berdarah": {
+      "nama": "Demam Berdarah Dengue",
+      "gejala": ["demam tinggi", "sakit kepala hebat", "nyeri otot", "mual", "ruam kulit", "nyeri belakang mata"],
+      "tingkat": "berat",
+      "saran": "⚠️ SEGERA ke dokter atau rumah sakit untuk pemeriksaan lebih lanjut! Jangan tunda!"
+    },
+    "tipes": {
+      "nama": "Tifus (Demam Tifoid)",
+      "gejala": ["demam tinggi berkepanjangan", "sakit kepala", "lemas", "tidak nafsu makan", "diare", "konstipasi"],
+      "tingkat": "berat",
+      "saran": "⚠️ Segera konsultasi dokter untuk tes Widal dan pengobatan antibiotik"
+    },
+    "asma": {
+      "nama": "Asma",
+      "gejala": ["sesak nafas", "batuk", "mengi", "dada sesak", "sulit bernafas"],
+      "tingkat": "sedang",
+      "saran": "Hindari pemicu asma, gunakan inhaler jika ada, konsultasi dokter untuk pengobatan rutin"
+    }
+  }
+}
