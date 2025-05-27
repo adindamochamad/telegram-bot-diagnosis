@@ -1,11 +1,11 @@
-# telegram_bot.py - Production Ready Version
+# telegram_bot.py - Production Ready Version (FIXED)
 import json
 import os
 import logging
+from datetime import datetime
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-# UPDATE 123 123123
 # Setup logging untuk production
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -26,15 +26,15 @@ WELCOME_MESSAGE = """
 Saya bisa membantu menganalisis gejala yang kamu rasakan.
 
 **Cara menggunakan:**
-- Ketik gejala yang kamu rasakan
-- Pisahkan dengan koma jika lebih dari 1
-- Contoh: "demam, batuk, pilek"
+• Ketik gejala yang kamu rasakan
+• Pisahkan dengan koma jika lebih dari 1
+• Contoh: "demam, batuk, pilek"
 
 **Perintah tersedia:**
 /start - Pesan selamat datang
 /help - Panduan penggunaan
 /daftar - Lihat daftar penyakit
-/stats - Statistik bot (admin only)
+/stats - Statistik bot
 
 ⚠️ **Disclaimer:** Bot ini hanya untuk referensi awal. Selalu konsultasi ke dokter untuk diagnosis yang akurat!
 """
@@ -236,21 +236,21 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 3. Contoh: `demam, batuk, pilek`
 
 **🔹 Perintah Tersedia:**
-- `/start` - Pesan selamat datang
-- `/help` - Panduan ini
-- `/daftar` - Lihat daftar penyakit dalam database
-- `/stats` - Statistik penggunaan bot
+• `/start` - Pesan selamat datang
+• `/help` - Panduan ini
+• `/daftar` - Lihat daftar penyakit dalam database
+• `/stats` - Statistik penggunaan bot
 
 **🔹 Contoh Gejala yang Dikenali:**
-- Flu: demam, batuk, pilek, lemas, sakit kepala
-- Masuk angin: perut kembung, mual, lemas
-- Gastritis: perut sakit, mual, kembung, perih ulu hati
-- Demam berdarah: demam tinggi, sakit kepala hebat, nyeri otot
+• Flu: demam, batuk, pilek, lemas, sakit kepala
+• Masuk angin: perut kembung, mual, lemas
+• Gastritis: perut sakit, mual, kembung, perih ulu hati
+• Demam berdarah: demam tinggi, sakit kepala hebat, nyeri otot
 
 **🔹 Tips Penggunaan:**
-- Gunakan bahasa Indonesia yang sederhana
-- Semakin spesifik gejala, semakin akurat hasil
-- Bot ini untuk referensi awal, bukan pengganti dokter
+• Gunakan bahasa Indonesia yang sederhana
+• Semakin spesifik gejala, semakin akurat hasil
+• Bot ini untuk referensi awal, bukan pengganti dokter
 
 ⚠️ **Penting:** Selalu konsultasi ke tenaga medis profesional untuk diagnosis dan pengobatan yang tepat!
     """
@@ -303,8 +303,8 @@ async def stats_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📊 **STATISTIK BOT (ADMIN)**
 
 👥 **Pengguna:**
-- Total queries: {bot_stats['total_queries']}
-- Unique users: {len(bot_stats['unique_users'])}
+• Total queries: {bot_stats['total_queries']}
+• Unique users: {len(bot_stats['unique_users'])}
 
 🔥 **Gejala Terpopuler:**
 """
@@ -388,7 +388,7 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     logger.error(f"Update {update} caused error {context.error}")
 
 def main():
-    """Main function"""
+    """Main function - FIXED VERSION"""
     logger.info("🤖 Starting Telegram Bot Diagnosis Penyakit...")
     logger.info(f"🔧 Environment: {'Production' if os.environ.get('RAILWAY_ENVIRONMENT') else 'Development'}")
     
@@ -414,16 +414,12 @@ def main():
         logger.info("✅ All handlers added successfully")
         logger.info("🚀 Bot is starting... Press Ctrl+C to stop")
         
-        # Run the bot
-        app.run_polling(
-            drop_pending_updates=True
-        )
+        # FIXED: Simple run_polling without problematic parameters
+        app.run_polling()
         
     except Exception as e:
         logger.error(f"❌ Failed to start bot: {e}")
         raise
 
 if __name__ == "__main__":
-    # Import datetime here to avoid circular imports
-    from datetime import datetime
     main()
