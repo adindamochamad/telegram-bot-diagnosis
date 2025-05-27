@@ -415,7 +415,6 @@ def main():
         
         # Run the bot
         app.run_polling(
-            allowed_update_types=["message", "callback_query"],
             drop_pending_updates=True
         )
         
